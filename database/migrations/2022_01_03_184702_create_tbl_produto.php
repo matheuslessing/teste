@@ -15,6 +15,9 @@ class CreateTblProduto extends Migration
     {
         Schema::create('tbl_produto', function (Blueprint $table) {
             $table->id();
+            $table->string('sku');
+            $table->string('nome');
+            $table->double('quantidade');
             $table->timestamps();
         });
     }

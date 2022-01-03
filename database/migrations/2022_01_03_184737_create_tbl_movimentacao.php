@@ -15,6 +15,9 @@ class CreateTblMovimentacao extends Migration
     {
         Schema::create('tbl_movimentacao', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('fk_tbl_movimentacao_id_produto')
+                ->references('id')->on('tbl_produto');
+            $table->double('quantidade');
             $table->timestamps();
         });
     }
